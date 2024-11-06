@@ -1,0 +1,61 @@
+@import '../../styles/Global';
+.hero{
+  $heroTopPadding: 7.5rem;
+
+  height: calc(50rem + $heroTopPadding);
+  position: relative;
+  display: grid;
+  grid-template-columns:70% 30%;
+
+  color:white;
+  box-shadow: $shadow;
+
+  & > * {padding-top: 7.5rem;}
+  &__leftSide{
+    background-color: $primary-color;
+
+    //padding-left: 15%;
+    //content:"";
+  }
+  &__rightSide{
+    background:
+            linear-gradient(to right,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .75)), /* Gradient na górze */
+            url('../../assets/heroImg945x800.webp');
+    background-size: cover  ;
+    background-position: 0 -40px;
+  }
+
+  //& &__container{ width: 100% !important; }
+  &__container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    padding: 8rem 0;
+    display: grid;
+    grid-template-rows: max-content min-content min-content;
+    gap: 2rem;
+  }
+
+  &__title{
+    line-height: 7rem;
+
+    &--1{
+      font-size: 6rem;
+      font-weight: 300;
+    }
+
+    &--2{
+      font-size: 8.5rem;
+      font-weight: 600;
+    }
+
+  }
+
+  &__description{
+    width: 65rem;
+    font-weight: 300;
+  }
+
+}
