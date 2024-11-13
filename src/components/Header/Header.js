@@ -11,8 +11,7 @@ function Header() {
                         <span>
                             Dla początkujących <span className='arrow'>▼</span>
                         </span>
-
-                        </li>
+                    </li>
                     <li>rodzaje</li>
                     <li>Galeria</li>
                     <li>Kontakt</li>
