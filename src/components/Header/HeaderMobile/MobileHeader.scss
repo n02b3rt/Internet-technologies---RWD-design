@@ -1,0 +1,122 @@
+@import '../../../styles/Global';
+
+.mobile-header {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 7.5rem;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  padding: 1rem 5rem;
+  color: white;
+  transition: background-color 0.3s ease, top 0.3s ease;
+  @media screen and (max-width: $media-425px) {
+    padding: 1rem 2rem;
+  }
+  &--sticky {
+    position: fixed;
+    top: 0;
+    background-color: rgba($primary-color,.95);
+    animation: slideDown 0.3s ease;
+  }
+
+  &__logo {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    .burger-line {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: white;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding-top: 5rem;
+    z-index: 1000;
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+
+      li {
+        padding: 1.5rem 2rem;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .submenu {
+          display: none;
+          flex-direction: column;
+          padding-left: 1rem;
+          padding-top: 1rem;
+
+          li {
+            padding: 0.5rem 0;
+          }
+        }
+
+        &.submenu-toggle--open .submenu {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: $media-1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -7.5rem;
+  }
+  to {
+    top: 0;
+  }
+}

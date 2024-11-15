@@ -1,0 +1,113 @@
+@import '../../../styles/Global';
+
+.arrow {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.header {
+  box-sizing: inherit;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 7.5rem;
+  padding: 1rem 0;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  transition: background-color 0.3s ease, top 0.3s ease;
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.85); // Zmiana tła po przyklejeniu
+    animation: slideDown 0.3s ease; // Animacja wysuwania
+  }
+
+  &__container {
+    display: none;
+    padding: 0 5rem;
+    grid-column-gap: 2rem;
+  }
+
+  &__logo {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__menu {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    & > * {
+      padding-right: 3rem;
+      text-transform: uppercase;
+    }
+
+    &__submenu {
+      position: relative;
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(8.2px);
+        font-size: 1.6rem;
+        padding: 1rem 0;
+        list-style: none;
+        margin: 0;
+        min-width: 26rem;
+
+        li {
+          padding: 1rem 2rem;
+          white-space: nowrap;
+          color: $text-color-darkre;
+          cursor: pointer;
+          transition: background-color 0.5s;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $primary-color;
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      &:hover .submenu {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: calc($media-1024px + 1px)) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: $media-1440px) {
+      grid-template-columns: min-content 1fr;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -7.5rem;
+  }
+  to {
+    top: 0;
+  }
+}

@@ -1,4 +1,11 @@
+@import '../../styles/Global';
 .container{
-  width: 1200px;
+  width: 120rem;
+  @media screen and (max-width: $media-1440px){
+   width: 90%;
+  }
+  //@media screen and (max-width: $media-768px){
+  //  //max-width: 50%;
+  //}
   margin: 0 auto;
 }
