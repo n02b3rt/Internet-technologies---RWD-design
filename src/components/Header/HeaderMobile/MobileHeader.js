@@ -1,11 +1,13 @@
 import './MobileHeader.scss';
 import { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function MobileHeader() {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [isSubmenuOpen, setSubmenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
@@ -29,6 +31,35 @@ function MobileHeader() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        console.log(id, element);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            setMenuOpen(false); // Zamyka menu po przewinięciu
+        } else {
+            // Opóźnij próbę przewinięcia, jeśli element jeszcze nie istnieje
+            setTimeout(() => {
+                const delayedElement = document.getElementById(id);
+                if (delayedElement) {
+                    delayedElement.scrollIntoView({ behavior: 'smooth' });
+                    setMenuOpen(false); // Zamyka menu po przewinięciu
+                }
+            }, 100);
+        }
+    };
+
+    const handleAnchorClick = (id) => {
+        if (location.pathname !== "/") {
+            // Jeśli nie jesteśmy na stronie głównej, nawigujemy do niej
+            navigate("/");
+            // Poczekaj, aż React Router wyrenderuje stronę, a potem przewiń
+            setTimeout(() => scrollToSection(id), 100);
+        } else {
+            scrollToSection(id);
+        }
+    };
+
     return (
         <header className={`mobile-header ${isSticky ? 'mobile-header--sticky' : ''}`}>
             <div className='mobile-header__logo'>
@@ -45,15 +76,51 @@ function MobileHeader() {
                     <li onClick={toggleSubmenu} className={`submenu-toggle ${isSubmenuOpen ? 'submenu-toggle--open' : ''}`}>
                         <span>Dla początkujących</span>
                         <ul className={`submenu ${isSubmenuOpen ? 'submenu--open' : ''}`}>
-                            <li>Co to jest?</li>
-                            <li>Dlaczego Bonsai?</li>
+                            <li>
+                                <Link
+                                    to="/"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleAnchorClick('co-to-jest-bonsai');
+                                    }}
+                                >
+                                    Co to jest?
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleAnchorClick('dlaczego-warto-wybrac-bonasi');
+                                    }}
+                                >
+                                    Dlaczego Bonsai?
+                                </Link>
+                            </li>
                         </ul>
                     </li>
                     <li>
-                        <Link to="/Type-Of-Bonsai">Rodzaje</Link>
+                        <Link to="/Type-Of-Bonsai" onClick={toggleMenu}>
+                            Rodzaje
+                        </Link>
                     </li>
-                    <li>Galeria</li>
-                    <li>Kontakt</li>
+                    <li>
+                        <Link to="/Gallery" onClick={toggleMenu}>
+                            Galeria
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleAnchorClick('kontakt');
+                            }}
+                        >
+                            Kontakt
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

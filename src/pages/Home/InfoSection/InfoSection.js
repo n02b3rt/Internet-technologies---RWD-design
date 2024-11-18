@@ -5,9 +5,9 @@ import Container from "../../../components/Container/Container";
 import img1 from "../../../assets/infosection-photo-1.webp";
 import img2 from "../../../assets/infosection-photo-2.webp";
 
-const InfoSection = () =>{
+const InfoSection = ({id}) =>{
     return (
-        <section className="info-section">
+        <section id={id} className="info-section">
             <Container className="info-section__container">
                 <div className="info-section__content">
                     <SectionTitle

@@ -6,6 +6,7 @@ import Header from "./components/Header/HeaderPC/Header";
 import HeaderMobile from "./components/Header/HeaderMobile/MobileHeader";
 import Footer from "./components/Footer/Footer";
 import './styles/App.scss';
+import Gallery from "./pages/Gallery/Gallery";
 
 function App() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1025);
@@ -25,6 +26,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Type-Of-Bonsai" element={<TypeOfBonsai />} />
+                <Route path="/Gallery" element={<Gallery />} />
             </Routes>
             <Footer />
         </Router>

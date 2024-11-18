@@ -3,9 +3,9 @@ import Container from "../../../components/Container/Container";
 import ContactForm from "../../../components/ContactForm/ContactForm";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
-const ContactSection = () => {
+const ContactSection = ({id}) => {
     return (
-        <section className="ContactSection">
+        <section id={id} className="ContactSection">
             <Container className="ContactSection__container">
                 <ContactForm></ContactForm>
                 <div className="ContactSection__content">

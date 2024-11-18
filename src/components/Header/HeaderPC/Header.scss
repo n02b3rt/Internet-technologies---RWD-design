@@ -18,10 +18,11 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   transition: background-color 0.3s ease, top 0.3s ease;
 
+  a{color: white}
   &--sticky {
     position: fixed;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.85); // Zmiana tła po przyklejeniu
+    background-color: rgba($primary-color, 0.95); // Zmiana tła po przyklejeniu
     animation: slideDown 0.3s ease; // Animacja wysuwania
   }
 
@@ -72,9 +73,10 @@
         min-width: 26rem;
 
         li {
+          & > a{color: $text-color-darkre !important;}
           padding: 1rem 2rem;
           white-space: nowrap;
-          color: $text-color-darkre;
+
           cursor: pointer;
           transition: background-color 0.5s;
 

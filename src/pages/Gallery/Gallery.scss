@@ -1,0 +1,88 @@
+@import "../../styles/Global";
+.Gallery{
+  &__container{
+    padding: 7.5rem 0;
+    display: grid;
+    grid-template-areas:
+  'photo1 photo1 photo2 photo3'
+  'photo1 photo1 photo4 photo5'
+  'photo6 photo7 photo7 photo8'
+  'photo9 photo7 photo7 photo10';
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $media-1440px){
+      grid-template-areas:
+  'photo1 photo1 photo2'
+  'photo1 photo1 photo3'
+  'photo4 photo7 photo7'
+  'photo5 photo7 photo7'
+  'photo6 photo8 photo9'
+    }
+
+    @media screen and (max-width: $media-1024px){
+      grid-template-areas:
+      'photo1 photo2'
+      'photo3 photo4'
+      'photo5 photo6'
+      'photo7 photo8'
+      'photo9 photo10'
+    }
+
+  }
+
+  &__photo{
+    //width: 40rem;
+    &--1, &--7{
+      width: 60rem;
+      height: 60rem;
+    }
+    &--2,&--3,&--4,&--5,&--6,&--9,&--8,&--10{
+      width: 29rem;
+      height: 29rem;
+    }
+    @media screen and (max-width: $media-1024px){
+      width: 29rem !important;
+      height: 29rem !important;
+    }
+
+    &--1{
+      grid-area: photo1;
+      width: 58rem;
+    }
+    &--2{
+      grid-area: photo2;
+    }
+    &--3{
+      grid-area: photo3;
+    }
+    &--4{
+      grid-area: photo4;
+    }
+    &--5{
+      grid-area: photo5;
+    }
+    &--6{
+      grid-area: photo6;
+    }
+    &--7{
+      grid-area: photo7;
+    }
+    &--8{
+      grid-area: photo8;
+    }
+    &--9{
+      grid-area: photo9;
+    }
+    &--10{
+      grid-area: photo10;
+      @media screen and (max-width: $media-1440px){
+        display: none;
+      }
+      @media screen and (max-width: $media-1024px){
+       display: block;
+      }
+    }
+  }
+}

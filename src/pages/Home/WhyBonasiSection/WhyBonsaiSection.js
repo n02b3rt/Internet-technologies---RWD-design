@@ -24,9 +24,9 @@ const CardData = {
     },
 };
 
-const WhyBonsaiSection = () => {
+const WhyBonsaiSection = ({id}) => {
     return (
-        <section className="whyBonsai">
+        <section id={id} className="whyBonsai">
             <Container className="whyBonsai__container">
                 <SectionTitle
                     className="whyBonsai__title"
