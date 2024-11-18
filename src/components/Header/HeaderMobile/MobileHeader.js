@@ -1,5 +1,6 @@
 import './MobileHeader.scss';
 import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 function MobileHeader() {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -30,7 +31,9 @@ function MobileHeader() {
 
     return (
         <header className={`mobile-header ${isSticky ? 'mobile-header--sticky' : ''}`}>
-            <div className='mobile-header__logo'>Bonsai.pl</div>
+            <div className='mobile-header__logo'>
+                <Link to="/" >Bonsai.pl</Link>
+            </div>
             <div className='mobile-header__burger' onClick={toggleMenu}>
                 <span className='burger-line'></span>
                 <span className='burger-line'></span>
@@ -46,7 +49,9 @@ function MobileHeader() {
                             <li>Dlaczego Bonsai?</li>
                         </ul>
                     </li>
-                    <li>Rodzaje</li>
+                    <li>
+                        <Link to="/Type-Of-Bonsai">Rodzaje</Link>
+                    </li>
                     <li>Galeria</li>
                     <li>Kontakt</li>
                 </ul>

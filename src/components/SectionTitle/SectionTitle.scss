@@ -1,0 +1,14 @@
+@import "../../styles/Global";
+
+.section-title{
+  color: $text-color;
+  line-height: 3.8rem;
+
+  &--1{
+    font-weight: 400;
+    font-size: 3.4rem;
+  }
+  &--2{
+    font-size: 6.4rem;
+  }
+}

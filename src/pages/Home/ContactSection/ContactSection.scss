@@ -1,0 +1,15 @@
+.ContactSection{
+  width: 100%;
+  padding: 7.5rem 0;
+  font-size: 2rem;
+  &__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6rem;
+  }
+  &__content{
+    display: grid;
+    row-gap: 2rem;
+    &__description{}
+  }
+}

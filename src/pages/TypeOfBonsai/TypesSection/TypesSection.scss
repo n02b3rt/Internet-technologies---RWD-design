@@ -1,0 +1,9 @@
+.TypesSection{
+  padding: 7.5rem 0;
+  &__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-gap: 5rem 3rem;
+  }
+}

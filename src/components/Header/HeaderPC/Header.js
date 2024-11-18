@@ -1,5 +1,6 @@
 import './Header.scss';
 import { useEffect, useState } from 'react';
+import {Link} from "react-router-dom";
 
 function Header() {
     const [isSticky, setIsSticky] = useState(false);
@@ -19,7 +20,9 @@ function Header() {
 
     return (
         <header className={`header header__container ${isSticky ? 'header--sticky' : ''}`}>
-            <div className='header__logo'>Bonsai.pl</div>
+            <div className='header__logo'>
+                <Link to="/" >Bonsai.pl</Link>
+            </div>
             <ul className='header__menu'>
                 <li className='header__menu__submenu'>
                     <span>
@@ -30,7 +33,9 @@ function Header() {
                         <li>Dlaczego Bonsai?</li>
                     </ul>
                 </li>
-                <li>Rodzaje</li>
+                <li>
+                    <Link to="/Type-Of-Bonsai">Rodzaje</Link>
+                </li>
                 <li>Galeria</li>
                 <li>Kontakt</li>
             </ul>

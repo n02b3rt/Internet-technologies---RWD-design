@@ -1,0 +1,42 @@
+.SingleBonsai{
+  //background: red;
+  display: grid;
+  text-align: right;
+  grid-template-areas:
+    'img title title'
+    'img description description';
+  align-items: start;
+  &__left{
+    grid-template-areas:
+    'title title img'
+    'description description img' !important;
+    text-align: left !important;
+  }
+
+
+  &__img{
+    grid-area: img;
+    width: 25rem;
+    height: 30rem;
+    background:gray;
+  }
+  &__title{
+    font-size: 8rem;
+    font-weight: 600;
+    position: relative;
+    height: 12.8rem;
+    & > *{
+      position: absolute;
+
+    }
+
+    grid-area: title;
+  }
+  &__description{
+    grid-area: description;
+    display: flex;
+    align-items: start;
+    justify-items: start;
+    height: 25rem;
+  }
+}
