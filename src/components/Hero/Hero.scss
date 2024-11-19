@@ -14,7 +14,7 @@
   }
   @media screen and (max-width: $media-768px){
     grid-template-columns: 1fr;
-    height: calc(30rem + $heroTopPadding);
+    height: 50rem;
   }
 
   & > * {padding-top: 7.5rem;}
