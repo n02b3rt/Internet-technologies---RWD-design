@@ -11,6 +11,9 @@
     grid-gap: 2rem;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: $media-1024px) and (min-width: $media-768px){
+      margin-top: 7rem;
+    }
 
     @media screen and (max-width: $media-1440px){
       grid-template-areas:
@@ -30,6 +33,20 @@
       'photo9 photo10'
     }
 
+    @media screen and (max-width: $media-768px){
+      grid-template-areas:
+      'photo1'
+      'photo2'
+      'photo3'
+      'photo4'
+      'photo5'
+      'photo6'
+      'photo7'
+      'photo8'
+      'photo9'
+      'photo10'
+    }
+
   }
 
   &__photo{
@@ -45,6 +62,14 @@
     @media screen and (max-width: $media-1024px){
       width: 29rem !important;
       height: 29rem !important;
+    }
+    @media screen and (max-width: $media-768px){
+      width: 35rem !important;
+      height: 35rem !important;
+    }
+    @media screen and (max-width: $media-375px){
+      width: 28rem !important;
+      height: 28rem !important;
     }
 
     &--1{

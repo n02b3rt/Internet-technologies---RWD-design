@@ -1,16 +1,29 @@
-.Card{
-  height: 30rem;
-  background: white;
-  border-radius: 1rem;
-  padding: 2.5rem;
-  text-align: center;
-  font-size: 1.8rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
-  &__icon{
-    width: 15rem;
-  }
-  &__title{}
-  &__description{
-    font-size: 1.5rem;
+@import '../../styles/Global';
+.whyBonsai{
+  .Card{
+    min-height: 30rem;
+    background: white;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+    &__icon{
+      width: 15rem;
+      @media (max-width: $media-1024px){
+        width: 12rem;
+      }
+    }
+    &__title{
+      @media (max-width: $media-1024px){
+        font-size: 1.8rem;
+      }
+    }
+    &__description{
+      font-size: 1.5rem;
+      @media (max-width: $media-1024px){
+        font-size: 1.3rem;
+      }
+    }
   }
 }

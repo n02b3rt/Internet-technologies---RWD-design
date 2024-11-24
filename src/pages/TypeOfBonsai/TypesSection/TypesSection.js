@@ -2,7 +2,6 @@ import './TypesSection.scss'
 import Container from '../../../components/Container/Container'
 import SingleBonsai from "./SingleBonsai/SingleBonsai";
 import treeData from "../treeData";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const TypesSection = () =>{
     console.log(treeData);

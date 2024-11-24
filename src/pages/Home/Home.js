@@ -25,8 +25,8 @@ const Home = () => {
                 href={heroData.href}
             />
             <InfoSection id="co-to-jest-bonsai" />
-            {/*<WhyBonsaiSection id="dlaczego-warto-wybrac-bonasi" />*/}
-            {/*<ContactSection id="kontakt" />*/}
+            <WhyBonsaiSection id="dlaczego-warto-wybrac-bonasi" />
+            <ContactSection id="kontakt" />
         </main>
     );
 };

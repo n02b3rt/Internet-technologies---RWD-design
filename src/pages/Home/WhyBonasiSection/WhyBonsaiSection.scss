@@ -1,3 +1,4 @@
+@import '../../../styles/Global';
 .whyBonsai{
   width: 100%;
   padding: 7.5rem 0;
@@ -19,6 +20,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 5rem;
+    @media screen and (max-width: $media-1024px){
+      column-gap: 2rem;
+    }
 
+    @media screen and (max-width: $media-768px){
+      max-width: 40rem;
+      row-gap: 2rem;
+      grid-template-columns: 1fr;
+    }
   }
 }
