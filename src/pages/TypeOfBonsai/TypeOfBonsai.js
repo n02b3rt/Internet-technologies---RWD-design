@@ -1,6 +1,7 @@
 import './TypeOfBonsai.scss'
 import Hero from "../../components/Hero/Hero";
 import TypesSection from "./TypesSection/TypesSection";
+import {useEffect} from "react";
 
 const heroData = {
     titlePart1: "Rodzaje",
@@ -9,6 +10,9 @@ const heroData = {
 };
 
 const TypeOfBonsai = () => {
+    useEffect(() => {
+        document.title = "Rodzaje - Bonsai.pl"; // Ustaw nazwę strony
+    }, []);
   return (
       <main className="typeOfBonsai">
           <Hero

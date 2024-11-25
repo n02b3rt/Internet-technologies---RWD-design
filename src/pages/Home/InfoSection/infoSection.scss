@@ -48,7 +48,6 @@
 
 
   &__photos{
-    //background: red;
     position: relative;
     transform: scale(0.9);
     @media screen and (max-width: $media-768px){
@@ -71,6 +70,7 @@
         position:relative;
         left: 0;
         top: 0;
+        height: 20rem;
       }
     }
 

@@ -12,6 +12,7 @@ import photo7 from "../../assets/Gallery/katy-t_Oxcbm12Vw-unsplash.webp";
 import photo8 from "../../assets/Gallery/mark-tegethoff-TYUS-cXzy50-unsplash.webp";
 import photo9 from "../../assets/Gallery/sarah-dorweiler-KcufLkTXYy4-unsplash.webp";
 import photo10 from "../../assets/Gallery/toa-heftiba-W1yjvf5idqA-unsplash.webp";
+import {useEffect} from "react";
 
 const heroData = {
     titlePart1: "Galeria",
@@ -19,6 +20,9 @@ const heroData = {
 };
 
 const Gallery = () => {
+    useEffect(() => {
+        document.title = "Galeria - Bonsai.pl"; // Ustaw nazwę strony
+    }, []);
     return (
         <main className="Gallery">
             <Hero

@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero';
 import InfoSection from './InfoSection/InfoSection';
 import WhyBonsaiSection from './WhyBonasiSection/WhyBonsaiSection';
 import ContactSection from "./ContactSection/ContactSection";
+import {useEffect} from "react";
 
 const heroData = {
     titlePart1: "Witamy na plantacji",
@@ -14,6 +15,9 @@ const heroData = {
 };
 
 const Home = () => {
+    useEffect(() => {
+        document.title = "Home - Bonsai.pl"; // Ustaw nazwę strony
+    }, []);
     return (
         <main className="home">
             <Hero
