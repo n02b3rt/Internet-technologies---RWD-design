@@ -13,7 +13,7 @@ const TypesSection = () =>{
                         if (index % 2 !== 0) {
                             style = 'SingleBonsai__left';
                         }
-                        return ( // Musisz użyć `return`, aby zwrócić JSX
+                        return (
                             <SingleBonsai
                                 key={index}
                                 img={tree.img}

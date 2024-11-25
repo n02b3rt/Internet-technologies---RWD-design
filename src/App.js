@@ -5,7 +5,6 @@ import TypeOfBonsai from "./pages/TypeOfBonsai/TypeOfBonsai";
 import Header from "./components/Header/HeaderPC/Header";
 import HeaderMobile from "./components/Header/HeaderMobile/MobileHeader";
 import Footer from "./components/Footer/Footer";
-import './styles/App.scss';
 import Gallery from "./pages/Gallery/Gallery";
 
 function App() {

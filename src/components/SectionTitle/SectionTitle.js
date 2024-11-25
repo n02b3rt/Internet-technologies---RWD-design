@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // PropTypes jest opcjonalne, ale przydatne do typowania propsów
+import PropTypes from 'prop-types';
 import './SectionTitle.scss'
 
 const SectionTitle = ({className = '', titlePart1, titlePart2 }) => {
